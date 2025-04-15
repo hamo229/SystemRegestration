@@ -57,7 +57,7 @@ public class SystemRegestration {
             allStudents.remove(StudentId);
             System.out.println("removed successfully!");
         } else
-            System.out.println("Student not found");
+            System.out.println("Student not found!!");
     }
     
     public void removeCourse(int courseId) {
