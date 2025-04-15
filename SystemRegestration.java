@@ -124,4 +124,17 @@ public class SystemRegestration {
             System.out.println("student or course not added!!");
         }
     }
+
+    public void undo() {
+        if (UndoStack.isEmpty()) {
+            System.out.println("Nothing to undo");
+            return;
+        }
+        Operation lastOperation = (Operation) UndoStack.pop();
+        if (lastOperation.oper.equals("enroll")) {
+            enrollStudent(lastOperation.studentID, lastOperation.courseID);
+        } else if (lastOperation.oper.equals("remove")) {
+            removeEnrollmen(lastOperation.studentID, lastOperation.courseID);
+        }
+    }
 }
